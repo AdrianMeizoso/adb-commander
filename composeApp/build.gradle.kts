@@ -29,15 +29,18 @@ kotlin {
     }
 }
 
-
 compose.desktop {
     application {
         mainClass = "MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "org.trucuta.adbcommander"
+            targetFormats(TargetFormat.Dmg)
+            packageName = "Adb Commander"
             packageVersion = "1.0.0"
+            macOS {
+                bundleID = "org.trucuta.adbcommander"
+                dockName = "Adb Commander"
+            }
         }
     }
 }
